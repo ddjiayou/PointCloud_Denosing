@@ -14,7 +14,7 @@ for j=1:Par.count
     end
 end
 normal_out = normal./sum_count;
-search_size_update = 20;         %´Ë´¦±ê¼Ç£¬²ÎÊý´ýµ÷ÊÔ
+search_size_update = 20;         %Â´Ã‹Â´Â¦Â±ÃªÂ¼Ã‡Â£Â¬Â²ÃŽÃŠÃ½Â´Ã½ÂµÃ·ÃŠÃ”
 location = zeros(count,3);
 for ite = 1
     for i =1:count
@@ -28,7 +28,7 @@ for ite = 1
         w_temp = exp(-(factor1 + factor2));
         w = w_temp/sum(w_temp);
         ne_p = bsxfun(@minus,searchPoint, ne_point)';
-        delta_p = sum(w.*sum((ne_normal .* ne_p)) .* searchPoint_normal,2);
+        delta_p = sum(w.*sum((ne_normal .* ne_p)) .* ne_normal,2);
        location(i,:) =  searchPoint+delta_p';
     end
 end
